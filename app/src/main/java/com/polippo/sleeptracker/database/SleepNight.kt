@@ -7,12 +7,12 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "daily_sleep_quality_table")
 data class SleepNight(
 
-    @PrimaryKey(autoGenerate = true)
+        @PrimaryKey(autoGenerate = true)
     var nightId: Long = 0L,
-    @ColumnInfo(name = "start_time_milli")
-    var startTimeMille: Long = System.currentTimeMillis(),
-    @ColumnInfo(name = "end_time_milli")
-    var endTimeMille: Long = startTimeMille,
-    @ColumnInfo(name = "quality_rating")
+        @ColumnInfo(name = "start_time_milli")
+    var startTimeMilli: Long = System.currentTimeMillis(),
+        @ColumnInfo(name = "end_time_milli")
+    var endTimeMilli: Long = startTimeMilli,
+        @ColumnInfo(name = "quality_rating")
     var sleepQuality: Int = -1
 )
