@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.polippo.sleeptracker.R
 import com.polippo.sleeptracker.database.SleepDatabase
 import com.polippo.sleeptracker.databinding.FragmentSleepDetailBinding
+import com.polippo.sleeptracker.sleeptracker.SleepNightAdapter
 
 class SleepDetailFragment : Fragment(){
 
