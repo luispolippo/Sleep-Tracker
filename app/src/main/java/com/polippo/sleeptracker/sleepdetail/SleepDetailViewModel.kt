@@ -9,10 +9,10 @@ import com.polippo.sleeptracker.database.SleepNight
 
 class SleepDetailViewModel(
         private val sleepNightKey: Long = 0L,
-        datasource: SleepDatabaseDao): ViewModel() {
+        dataSource: SleepDatabaseDao): ViewModel() {
 
 
-    val database = datasource
+    val database = dataSource
 
     private val night = MediatorLiveData<SleepNight>()
 

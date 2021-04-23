@@ -1,10 +1,7 @@
 package com.polippo.sleeptracker.sleeptracker
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
+import androidx.lifecycle.*
 import com.polippo.sleeptracker.database.SleepDatabaseDao
 import com.polippo.sleeptracker.database.SleepNight
 import com.polippo.sleeptracker.formatNights
@@ -116,13 +113,25 @@ class SleepTrackerViewModel(
         uiScope.launch {
             clear()
             tonight.value = null
-            _showSnackBarEvent.value = true
         }
+        _showSnackBarEvent.value = true
     }
 
     private suspend fun clear(){
         withContext(Dispatchers.IO){
             database.clear()
         }
+    }
+
+    private val _navigateToSleepDataQuality = MutableLiveData<Long>()
+    val navigateToSleepDataQuality
+        get() = _navigateToSleepDataQuality
+
+    fun onSleepNightClicked(id: Long){
+        _navigateToSleepDataQuality.value = id
+    }
+
+    fun onSleepDataQualityNavigated(){
+        _navigateToSleepDataQuality.value = null
     }
 }

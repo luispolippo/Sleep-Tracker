@@ -12,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import com.polippo.sleeptracker.R
 import com.polippo.sleeptracker.database.SleepDatabase
 import com.polippo.sleeptracker.databinding.FragmentSleepDetailBinding
-import com.polippo.sleeptracker.sleeptracker.SleepNightAdapter
 
 class SleepDetailFragment : Fragment(){
 
@@ -24,8 +23,8 @@ class SleepDetailFragment : Fragment(){
 
         val arguments = SleepDetailFragmentArgs.fromBundle(arguments!!)
 
-        val datasource = SleepDatabase.getInstance(application).sleepDatabaseDao
-        val viewModelFactory = SleepDetailViewModelFactory(arguments.sleepNightKey, datasource)
+        val dataSource = SleepDatabase.getInstance(application).sleepDatabaseDao
+        val viewModelFactory = SleepDetailViewModelFactory(arguments.sleepNightKey, dataSource)
 
         val sleepDetailViewModel = ViewModelProvider(this, viewModelFactory).get(SleepDetailViewModel::class.java)
 
