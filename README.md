@@ -1,2 +1,2 @@
 # Sleep-Tracker
-Aplicativo desenvolvido no curso Android da Google pela Udemy 
+Aplicativo desenvolvido no curso Android da Google pela Udacity 
